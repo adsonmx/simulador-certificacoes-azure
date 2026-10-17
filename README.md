@@ -1,10 +1,10 @@
-# ☁️ Simulador de Certificações Cloud (Microsoft Azure)
+# ☁️ Simulador de Certificações Cloud 
 
-Aplicação web interativa para preparação focada nos exames da Microsoft (**AZ-900**, **AZ-104**). Desenvolvida com arquitetura de componentes moderna, separação clara de responsabilidades, tipagem estrita em TypeScript e testes unitários automatizados.
+Aplicação web para preparação focada nos exames da Microsoft).
 
 ---
 
-## 🎯 Funcionalidades Principais
+## Funcionalidades Principais
 
 - **Seleção de Certificação:** Foco em AZ-900 e AZ-104.
 - **Dois Modos de Treinamento:**
@@ -19,22 +19,22 @@ Aplicação web interativa para preparação focada nos exames da Microsoft (**A
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 - **Linguagem & Framework:** React 19, TypeScript
 - **Build Tool:** Vite
-- **Estilização:** Tailwind CSS v4, Lucide React
+- **Estilização:** Tailwind CSS, Lucide React
 - **Testes Unitários:** Vitest
 - **Arquitetura:** Componentização SPA, TypeScript Interfaces/Types, JSON Mock Data
 
 ---
 
-## 🚀 Como Executar Localmente
+## Como Executar Localmente
 
 ### Opção 1: Via Script Automático (Windows)
 Dê um duplo clique no arquivo `iniciar_projeto.bat` na raiz do projeto.
 
-### Opção 2: Via Terminal
+### Opção 2: Via Terminal -(mode_preguica)
 ```bash
 # 1. Clone o repositório
 git clone [https://github.com/SEU_USUARIO/simulador-certificacoes-azure.git](https://github.com/SEU_USUARIO/simulador-certificacoes-azure.git)
