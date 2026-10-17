@@ -32,7 +32,7 @@ Aplicação web para preparação focada nos exames da Microsoft).
 ## Como Executar Localmente
 
 ### Opção 1: Via Script Automático (Windows)
-Dê um duplo clique no arquivo `iniciar_projeto.bat` na raiz do projeto.
+Dê um duplo clique no arquivo `Iniciar_o_babado_todo.bat` na raiz do projeto.
 
 ### Opção 2: Via Terminal -(mode_preguica)
 ```bash
