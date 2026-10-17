@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "certificacao": "AZ-900",
+    "dominio": "Conceitos de Nuvem",
+    "enunciado": "Uma empresa precisa garantir que suas aplicações continuem funcionando mesmo se um datacenter inteiro sofrer uma queda de energia física. Qual conceito de nuvem atende diretamente a esse requisito?",
+    "alternativas": [
+      "Agilidade",
+      "Elasticidade",
+      "Tolerância a Falhas com Zonas de Disponibilidade",
+      "Economia de Escala"
+    ],
+    "indiceCorreto": 2,
+    "explicacao": "Zonas de Disponibilidade (Availability Zones) são datacenters fisicamente separados dentro de uma mesma região do Azure, com energia, resfriamento e rede independentes, garantindo tolerância a falhas em caso de incidentes em um datacenter."
+  },
+  {
+    "id": 2,
+    "certificacao": "AZ-900",
+    "dominio": "Conceitos de Nuvem",
+    "enunciado": "Qual modelo de serviço em nuvem transfere a maior responsabilidade de gerenciamento (sistema operacional, patches e middleware) para a Microsoft?",
+    "alternativas": [
+      "IaaS (Infraestrutura como Serviço)",
+      "PaaS (Plataforma como Serviço)",
+      "SaaS (Software como Serviço)",
+      "On-Premises"
+    ],
+    "indiceCorreto": 2,
+    "explicacao": "No modelo SaaS (como Microsoft 365), o provedor de nuvem é responsável por quase toda a pilha: hardware, rede, sistema operacional, atualizações e a própria aplicação."
+  },
+  {
+    "id": 3,
+    "certificacao": "AZ-900",
+    "dominio": "Arquitetura e Serviços Azure",
+    "enunciado": "Qual serviço do Azure deve ser utilizado para armazenar dados não estruturados massivos, como imagens, vídeos e arquivos de backup, com acesso via HTTP/HTTPS?",
+    "alternativas": [
+      "Azure SQL Database",
+      "Azure Blob Storage",
+      "Azure Cosmos DB",
+      "Azure Table Storage"
+    ],
+    "indiceCorreto": 1,
+    "explicacao": "O Azure Blob Storage é otimizado para armazenar quantidades massivas de dados não estruturados acessíveis de qualquer lugar via protocolos HTTP/HTTPS."
+  },
+  {
+    "id": 4,
+    "certificacao": "AZ-900",
+    "dominio": "Arquitetura e Serviços Azure",
+    "enunciado": "Qual serviço de computação sem servidor (Serverless) executa código sob demanda em resposta a eventos sem necessidade de gerenciar servidores?",
+    "alternativas": [
+      "Azure Virtual Machines",
+      "Azure Functions",
+      "Azure App Service Plan",
+      "Azure Kubernetes Service (AKS)"
+    ],
+    "indiceCorreto": 1,
+    "explicacao": "O Azure Functions é a solução FaaS (Function as a Service) orientada a eventos e serverless do Azure, cobrando apenas pelos milissegundos em que o código é executado."
+  },
+  {
+    "id": 5,
+    "certificacao": "AZ-900",
+    "dominio": "Gerenciamento e Governança",
+    "enunciado": "Qual ferramenta do Azure você deve utilizar para impor padrões organizacionais e avaliar a conformidade em escala (por exemplo, impedir a criação de VMs sem tags)?",
+    "alternativas": [
+      "Azure Policy",
+      "Microsoft Defender for Cloud",
+      "Azure Monitor",
+      "Azure Bastion"
+    ],
+    "indiceCorreto": 0,
+    "explicacao": "O Azure Policy permite criar, atribuir e gerenciar definições de políticas que impõem regras e efeitos aos recursos do Azure, garantindo conformidade e governança corporativa."
+  },
+  {
+    "id": 6,
+    "certificacao": "AZ-900",
+    "dominio": "Gerenciamento e Governança",
+    "enunciado": "Qual serviço atua como uma solução de gerenciamento centralizado de identidades e acessos na nuvem, fornecendo logon único (SSO) e autenticação multifator (MFA)?",
+    "alternativas": [
+      "Microsoft Entra ID (antigo Azure Active Directory)",
+      "Azure Key Vault",
+      "Azure Firewall",
+      "Network Security Group (NSG)"
+    ],
+    "indiceCorreto": 0,
+    "explicacao": "O Microsoft Entra ID é o serviço em nuvem de gerenciamento de identidades e acessos que fornece autenticação, autorização, MFA e SSO para recursos do Azure."
+  },
+  {
+    "id": 7,
+    "certificacao": "AZ-900",
+    "dominio": "Arquitetura e Serviços Azure",
+    "enunciado": "Qual recurso de rede do Azure permite filtrar o tráfego de rede de e para recursos do Azure em uma rede virtual (VNet), aplicando regras de segurança por IP e porta?",
+    "alternativas": [
+      "Azure Front Door",
+      "Network Security Group (NSG)",
+      "Azure ExpressRoute",
+      "Azure DNS"
+    ],
+    "indiceCorreto": 1,
+    "explicacao": "Um Network Security Group (NSG) contém regras de segurança que permitem ou negam tráfego de rede de entrada ou saída com base em endereços IP de origem/destino, portas e protocolos."
+  },
+  {
+    "id": 8,
+    "certificacao": "AZ-900",
+    "dominio": "Gerenciamento e Governança",
+    "enunciado": "Uma equipe precisa de uma estimativa de custos antes de implantar novas cargas de trabalho no Azure. Qual ferramenta gratuita da web é a mais indicada?",
+    "alternativas": [
+      "Calculadora de Preços do Azure (Azure Pricing Calculator)",
+      "Calculadora de TCO (Custo Total de Propriedade)",
+      "Azure Cost Management + Billing",
+      "Azure Advisor"
+    ],
+    "indiceCorreto": 0,
+    "explicacao": "A Calculadora de Preços do Azure permite configurar e estimar os custos antecipadamente para combinações personalizadas de produtos antes da contratação e implantação dos serviços."
+  }
+]

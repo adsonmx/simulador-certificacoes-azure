@@ -1,0 +1,51 @@
+====================================================================
+SIMULADOR DE CERTIFICAÇÕES AZURE (FRONT-END REACT + TYPESCRIPT)
+Desenvolvido por: Adson Carneiro
+Me siga no LinkedIn para acompanhar meus projetos https://www.linkedin.com/in/adson-carneiro-ba08141b3/
+====================================================================
+
+SOBRE O PROJETO:
+Simulador web interativo para preparação aos exames Microsoft Azure (AZ-900, AZ-104),com suporte a Modo Estudo (feedback imediato), Modo Exame Real (cronômetro contínuo),cálculo de pontuação com corte oficial da Microsoft (70%), diagnóstico de domínios fracos para revisão e testes unitários automatizados.
+
+--------------------------------------------------------------------
+PRÉ-REQUISITOS:
+- Node.js (versão 18 ou superior) instalado
+- Navegador Web moderno (Google Chrome, Microsoft Edge, Firefox, etc.)
+
+--------------------------------------------------------------------
+COMO EXECUTAR O PROJETO DO ZERO (PASSO A PASSO):
+
+1. Abra o Prompt de Comando (CMD) ou Terminal e navegue até a pasta do projeto:
+   cd C:\Site_adson\projeto_Cloud_simulador
+
+2. Instale as dependências da aplicação:
+   npm install
+
+3. Execute a suíte de testes unitários automatizados (Vitest):
+   npm test
+
+4. Inicie o servidor local de desenvolvimento (Vite):
+   npm run dev
+
+5. Abra o navegador no endereço exibido no terminal:
+   http://localhost:5173/
+
+--------------------------------------------------------------------
+
+OPÇÃO AUTOMÁTICA (EXECUTADOR BAT):
+Basta dar um duplo clique no arquivo "Iniciar_o_babado_todo.bat" presente nesta pasta.
+Ele verificará as dependências, rodará os testes e abrirá o simulador localmente.
+
+--------------------------------------------------------------------
+
+
+TECNOLOGIAS UTILIZADAS:
+- React 19 + TypeScript
+- Vite
+- Tailwind CSS v4 + @tailwindcss/vite
+- Lucide React (Ícones)
+- Vitest (Testes unitários automatizados)
+
+
+
+====================================================================
