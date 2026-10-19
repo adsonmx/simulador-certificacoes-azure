@@ -2,63 +2,71 @@ import { useState } from 'react';
 import { TelaBoasVindas } from './componentes/TelaBoasVindas';
 import { TelaSimulado } from './componentes/TelaSimulado';
 import { RelatorioResultado } from './componentes/RelatorioResultado';
+import { carregarQuestoesPorCertificacao, obterDadosCertificacao } from './dados/catalogoProvas';
 import type { ConfiguracaoSimulado, Questao, RespostaUsuario } from './tipos/simulado';
-import { obterQuestoesPorCertificacao } from './dados/index';
 
 export default function App() {
+  const [etapa, setEtapa] = useState<'inicio' | 'simulado' | 'resultado'>('inicio');
   const [configuracao, setConfiguracao] = useState<ConfiguracaoSimulado | null>(null);
-  const [questoesAtivas, setQuestoesAtivas] = useState<Questao[]>([]);
-  const [respostasFinais, setRespostasFinais] = useState<RespostaUsuario[] | null>(null);
-  const [tempoDecorridoTotal, setTempoDecorridoTotal] = useState<number>(0);
+  const [questoes, setQuestoes] = useState<Questao[]>([]);
+  const [respostas, setRespostas] = useState<RespostaUsuario[]>([]);
 
-  const questoesIniciais = obterQuestoesPorCertificacao('AZ-900');
+  // Disparado quando o candidato clica em "Iniciar Simulado"
+  const iniciarSimulado = (config: ConfiguracaoSimulado) => {
+    const todasQuestoes = carregarQuestoesPorCertificacao(config.certificacaoId);
+    
+    // Embaralha e seleciona a quantidade desejada
+    const questoesEmbaralhadas = [...todasQuestoes].sort(() => Math.random() - 0.5);
+    const questoesSelecionadas = questoesEmbaralhadas.slice(
+      0,
+      config.quantidadeQuestoes && config.quantidadeQuestoes < todasQuestoes.length
+        ? config.quantidadeQuestoes
+        : todasQuestoes.length
+    );
 
-  const iniciarSimulado = (novaConfiguracao: ConfiguracaoSimulado) => {
-    const todas = obterQuestoesPorCertificacao(novaConfiguracao.certificacao);
-    const selecionadas = todas.slice(0, novaConfiguracao.quantidadeQuestoes);
-    setQuestoesAtivas(selecionadas);
-    setConfiguracao(novaConfiguracao);
-    setRespostasFinais(null);
-    setTempoDecorridoTotal(0);
+    setConfiguracao(config);
+    setQuestoes(questoesSelecionadas);
+    setRespostas([]);
+    setEtapa('simulado');
   };
 
-  const finalizarSimulado = (respostas: RespostaUsuario[], tempoGasto: number) => {
-    setRespostasFinais(respostas);
-    setTempoDecorridoTotal(tempoGasto);
+  // Disparado ao concluir a última questão ou quando o cronômetro esgota
+  const finalizarSimulado = (respostasUsuario: RespostaUsuario[]) => {
+    setRespostas(respostasUsuario);
+    setEtapa('resultado');
   };
 
+  // Reinicia para a tela de seleção de provas
   const reiniciar = () => {
+    setEtapa('inicio');
     setConfiguracao(null);
-    setRespostasFinais(null);
-    setTempoDecorridoTotal(0);
+    setQuestoes([]);
+    setRespostas([]);
   };
+
+  const dadosCertificacao = configuracao ? obterDadosCertificacao(configuracao.certificacaoId) : undefined;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-center py-6">
-      {!configuracao && (
-        <TelaBoasVindas
-          aoIniciarSimulado={iniciarSimulado}
-          quantidadeQuestoesDisponiveis={questoesIniciais.length}
-        />
+    <main className="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-center py-10 px-4">
+      {etapa === 'inicio' && (
+        <TelaBoasVindas aoIniciar={iniciarSimulado} />
       )}
 
-      {configuracao && !respostasFinais && (
+      {etapa === 'simulado' && configuracao && (
         <TelaSimulado
-          questoes={questoesAtivas}
+          questoes={questoes}
           configuracao={configuracao}
-          aoFinalizarSimulado={finalizarSimulado}
-          aoCancelar={reiniciar}
+          aoFinalizar={finalizarSimulado}
         />
       )}
 
-      {configuracao && respostasFinais && (
+      {etapa === 'resultado' && configuracao && (
         <RelatorioResultado
-          respostas={respostasFinais}
-          configuracao={configuracao}
-          tempoDecorrido={tempoDecorridoTotal}
+          respostas={respostas}
+          notaCorteExigida={dadosCertificacao?.notaCortePercentual || 70}
           aoReiniciar={reiniciar}
         />
       )}
-    </div>
+    </main>
   );
 }

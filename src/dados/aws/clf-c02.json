@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "certificacao": "AWS-CLF",
+    "dominio": "Conceitos de Nuvem",
+    "enunciado": "Qual vantagem da nuvem AWS descreve a capacidade de aumentar ou diminuir a capacidade computacional dinamicamente de acordo com a demanda atual?",
+    "alternativas": [
+      "Agilidade",
+      "Elasticidade",
+      "Tolerância a Falhas",
+      "Alta Disponibilidade"
+    ],
+    "indiceCorreto": 1,
+    "explicacao": "Elasticidade na AWS é o poder de provisionar e desprovisionar recursos automaticamente com base na demanda, evitando subutilização ou falta de capacidade."
+  },
+  {
+    "id": 2,
+    "certificacao": "AWS-CLF",
+    "dominio": "Segurança e Conformidade",
+    "enunciado": "Segundo o Modelo de Responsabilidade Compartilhada da AWS, qual das opções abaixo é de responsabilidade estrita do CLIENTE?",
+    "alternativas": [
+      "Gerenciamento e aplicação de patches do sistema operacional convidado em instâncias EC2",
+      "Descarte físico de discos rígidos defeituosos dos data centers",
+      "Segurança física dos servidores nas Zonas de Disponibilidade",
+      "Manutenção do software do hipervisor das máquinas virtuais"
+    ],
+    "indiceCorreto": 0,
+    "explicacao": "A AWS é responsável pela segurança 'da' nuvem (hardware, data centers e instalações físicas). O cliente é responsável pela segurança 'na' nuvem, incluindo o sistema operacional das instâncias EC2 e atualizações de software."
+  },
+  {
+    "id": 3,
+    "certificacao": "AWS-CLF",
+    "dominio": "Serviços de Computação e Armazenamento",
+    "enunciado": "Qual serviço de armazenamento de objetos da AWS é projetado para armazenar dados não estruturados com durabilidade de 99,999999999% (11 noves)?",
+    "alternativas": [
+      "Amazon EBS (Elastic Block Store)",
+      "Amazon EFS (Elastic File System)",
+      "Amazon S3 (Simple Storage Service)",
+      "Amazon RDS (Relational Database Service)"
+    ],
+    "indiceCorreto": 2,
+    "explicacao": "O Amazon S3 é o serviço padrão de armazenamento de objetos da AWS, oferecendo redundância em múltiplas Zonas de Disponibilidade com 11 noves de durabilidade."
+  },
+  {
+    "id": 4,
+    "certificacao": "AWS-CLF",
+    "dominio": "Faturamento e Preços",
+    "enunciado": "Uma empresa deseja receber alertas automáticos quando seus custos estimados na AWS ultrapassarem US$ 500 no mês. Qual serviço deve ser configurado?",
+    "alternativas": [
+      "AWS Budgets",
+      "AWS Cost Explorer",
+      "AWS Trusted Advisor",
+      "AWS Organizations"
+    ],
+    "indiceCorreto": 0,
+    "explicacao": "O AWS Budgets permite definir limites orçamentários personalizados e dispara alertas automáticos (por e-mail ou SNS) quando os custos reais ou previstos excedem o valor estipulado."
+  }
+]

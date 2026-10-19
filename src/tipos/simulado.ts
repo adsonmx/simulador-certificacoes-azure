@@ -1,10 +1,18 @@
-export type IdCertificacao = 'AZ-900' | 'AZ-104' | 'AZ-204' | 'AZ-205' | 'AZ-400';
+export type CategoriaCertificacao = 'Cloud' | 'Seguranca' | 'Redes' | 'Gestao';
 
-export type ModoSimulado = 'estudo' | 'exame';
+export interface MetadadosCertificacao {
+  id: string;                      // Ex: 'AZ-900', 'AZ-104', 'AWS-CLF'
+  nome: string;                    // Nome oficial
+  provedor: string;                // Ex: 'Microsoft Azure', 'Amazon Web Services'
+  categoria: CategoriaCertificacao;
+  tempoPadraoMinutos: number;      // Tempo sugerido de prova
+  notaCortePercentual: number;     // Ex: 70
+  descricaoBreve: string;
+}
 
 export interface Questao {
   id: number;
-  certificacao: IdCertificacao;
+  certificacao: string;
   dominio: string;
   enunciado: string;
   alternativas: string[];
@@ -13,21 +21,24 @@ export interface Questao {
 }
 
 export interface ConfiguracaoSimulado {
-  certificacao: IdCertificacao;
-  modo: ModoSimulado;
+  certificacaoId: string;
+  modo: 'estudo' | 'exame';
+  tempoMinutos: number; // 0 para sem limite
   quantidadeQuestoes: number;
-  tempoLimiteMinutos: number;
 }
 
 export interface RespostaUsuario {
   questao: Questao;
-  indiceSelecionado: number;
+  indiceSelecionado: number | null;
   estaCorreta: boolean;
 }
 
-export interface DesempenhoDominio {
-  dominio: string;
-  total: number;
+export interface ResultadoFinal {
+  totalQuestoes: number;
   acertos: number;
   porcentagem: number;
+  aprovado: boolean;
+  notaCorteExigida: number;
+  desempenhoPorDominio: Record<string, { total: number; acertos: number }>;
+  dominioMaisFraco: string;
 }

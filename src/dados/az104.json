@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "certificacao": "AZ-104",
+    "dominio": "Gerenciamento de Identidades e Governança do Azure",
+    "enunciado": "Você precisa conceder a um usuário a capacidade de gerenciar todas as permissões de acesso e recursos em uma assinatura do Azure. Qual função interna do RBAC (Role-Based Access Control) deve ser atribuída?",
+    "alternativas": [
+      "Colaborador (Contributor)",
+      "Proprietário (Owner)",
+      "Administrador de Acesso do Usuário (User Access Administrator)",
+      "Leitor (Reader)"
+    ],
+    "indiceCorreto": 1,
+    "explicacao": "A função Proprietário (Owner) possui acesso total a todos os recursos, incluindo o direito de delegar e gerenciar permissões de acesso a outros usuários. O Colaborador pode gerenciar recursos, mas não permissões."
+  },
+  {
+    "id": 2,
+    "certificacao": "AZ-104",
+    "dominio": "Implementação e Gerenciamento de Armazenamento",
+    "enunciado": "Qual camada de acesso do Azure Blob Storage oferece o menor custo de armazenamento para dados raramente acessados que podem tolerar até várias horas de latência de recuperação?",
+    "alternativas": [
+      "Hot (Frequente)",
+      "Cool (Esporádico)",
+      "Cold (Frio)",
+      "Archive (Arquivo)"
+    ],
+    "indiceCorreto": 3,
+    "explicacao": "A camada Archive (Arquivo) é a mais econômica para retenção a longo prazo de dados inativos, exigindo processo de reidratação que pode levar várias horas."
+  }
+]
