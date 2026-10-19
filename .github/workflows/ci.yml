@@ -1,0 +1,30 @@
+name: CI - Integracao Continua e Testes
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Baixar o codigo do repositorio
+        uses: actions/checkout@v4
+
+      - name: 2. Configurar o Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 3. Instalar dependencias limpas
+        run: npm ci
+
+      - name: 4. Executar testes unitarios automatizados (Vitest)
+        run: npm test
+
+      - name: 5. Validar checagem de tipos e compilar (Build)
+        run: npm run build
